@@ -189,46 +189,16 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 
-
 pessoa.apresentaçao = function() {
-    var NomeCompleto = pessoa.nomeCompleto()
-    var Idade = pessoa.idade
-    var Altura = pessoa.altura
-    var Peso = pessoa.peso
-    var MetrosCaminhados = pessoa.caminhouQuantosMetros
-    
-    if ( pessoa.sexo === 'Masculino' && Idade != 1 && MetrosCaminhados != 1 )
-    {
-        return 'Olá, eu sou o ' + NomeCompleto + ', tenho ' + Idade + ' anos, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metros!'
-    }
-    else if ( pessoa.sexo === 'Masculino' && Idade === 1 && MetrosCaminhados != 1 )
-    {
-        return 'Olá, eu sou o ' + NomeCompleto + ', tenho ' + Idade + ' ano, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metros!'
-    }
-    else if ( pessoa.sexo === 'Masculino' && Idade === 1 && MetrosCaminhados === 1 )
-    {
-        return 'Olá, eu sou o ' + NomeCompleto + ', tenho ' + Idade + ' ano, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metro!'
-    }
-    else if ( pessoa.sexo === 'Masculino' && Idade != 1 && MetrosCaminhados === 1 )
-    {
-        return 'Olá, eu sou o ' + NomeCompleto + ', tenho ' + Idade + ' anos, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metro!'
-    }
-    else if ( pessoa.sexo === 'Feminino' && Idade != 1 && MetrosCaminhados != 1 )
-    {
-        return 'Olá, eu sou a ' + NomeCompleto + ', tenho ' + Idade + ' anos, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metros!'
-    }
-    else if ( pessoa.sexo === 'Feminino' && Idade === 1 && MetrosCaminhados != 1 )
-    {
-        return 'Olá, eu sou a ' + NomeCompleto + ', tenho ' + Idade + ' ano, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metros!'
-    }
-    else if ( pessoa.sexo === 'Feminino' && Idade === 1 && MetrosCaminhados === 1 )
-    {
-        return 'Olá, eu sou a ' + NomeCompleto + ', tenho ' + Idade + ' ano, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metro!'
-    }
-    else if ( pessoa.sexo === 'Feminino' && Idade != 1 && MetrosCaminhados === 1 )
-    {
-        return 'Olá, eu sou a ' + NomeCompleto + ', tenho ' + Idade + ' anos, ' + Altura + ', meu peso é ' + Peso + ' e, só hoje, eu já caminhei ' + MetrosCaminhados + ' metro!'
-    }
+var Seixo
+var Idaide = 'anos';
+var metrosCaminhados = 'metros';
+if ( pessoa.sexo === 'Feminino' ) { Seixo = 'a'; }
+else { Seixo = 'o' }
+if ( pessoa.idade === 1 ) { Idaide = 'ano'; }
+if ( pessoa.caminhouQuantosMetros === 1 ) { metrosCaminhados = 'metro' }
+return 'Olá, eu sou ' + Seixo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + Idaide + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
+
 }
 
 // Agora, apresente-se ;)
