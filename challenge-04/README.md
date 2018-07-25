@@ -111,30 +111,20 @@ citado acima, no lugar de "pessoas".
 
  carro.addPeopleOnCar = function(a)
 {
-carro.quantidadePessoas += a
-    if ( carro.quantidadePessoas == 1 )
+var AllPerson  = carro.quantidadePessoas + a
+    if ( carro.quantidadePessoas  == carro.assento )
     {
-        return 'Já temos ' + carro.quantidadePessoas + ' pessoa no carro!'
-    }
-    else if ( carro.quantidadePessoas - a == carro.assento )
-    {
-        carro.quantidadePessoas -= a
         return 'O carro está lotado!'
     }
-    else if ( carro.quantidadePessoas > carro.assento && carro.quantidadePessoas - a == carro.assento -1 )
+    if ( AllPerson > carro.assento )
     {
-        carro.quantidadePessoas -= a
-        return 'Só cabe 1 pessoa no carro!'
+        var restamXpessoas = carro.assento - carro.quantidadePessoas
+        var PouLpessoas = restamXpessoas === 1 ? 'pessoa' : 'pessoas'
+        var PouLcabem = restamXpessoas === 1 ? 'cabe' : 'cabem'
+        return 'Só ' + PouLcabem + ' mais ' + restamXpessoas + ' ' + PouLpessoas + ' no carro!'
     }
-    else if ( carro.quantidadePessoas > carro.assento )
-    {
-        carro.quantidadePessoas -= a
-        return 'Só cabem mais ' + ( carro.assento - carro.quantidadePessoas ) + ' pessoas no carro!'
-    }
-    else
-    {
+        carro.quantidadePessoas += a
         return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!'
-    }
 }
 
 /*
